@@ -51,11 +51,11 @@ public class ArrayDictionary implements Dictionary {
         int d1 = hashFunction(key);
         KVEntry n1 = null;
         KVEntry n2 = entries[d1];
-        while (n2.next != null && n2.value != key) {
+        while (n2.next != null && n2.key != key) {
             n1 = n2;
             n2 = n2.next;
         }
-        if (n2.value == key) {
+        if (n2.key == key) {
             if (n1 != null) {
                 n1.next = n2;
             }
