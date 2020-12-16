@@ -47,13 +47,11 @@ public class ArrayDictionary implements Dictionary {
     public void remove(String key) {
         int d1 = hashFunction(key);
         if (entries[d1] != null) {
-            KVEntry n1 = null;
-            KVEntry n2 = entries[d1];
-            while (n2.next != null && n2.key != key) {
-                n1 = n2;
-                n2 = n2.next;
+            KVEntry n1 = entries[d1];
+            while (n1.next != null && n1.key != key) {
+                n1 = n1.next;
             }
-            entries[d1] = n2.next;
+            entries[d1] = n1.next;
         }
         return;
     }
