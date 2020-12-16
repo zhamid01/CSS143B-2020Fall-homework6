@@ -53,9 +53,6 @@ public class ArrayDictionary implements Dictionary {
                 n1 = n2;
                 n2 = n2.next;
             }
-            if (n1 != null) {
-                n1.next = n2;
-            }
             entries[d1] = n2.next;
         }
         return;
